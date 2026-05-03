@@ -1,4 +1,5 @@
-{
+[
+  {
   "id": "attendance-system",
   "name": "Attendance System",
   "version": "v1.0",
@@ -26,3 +27,4 @@
     }
   ]
 }
+]
