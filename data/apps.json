@@ -1,1 +1,28 @@
-[]
+[{
+  "id": "attendance-system",
+  "name": "Attendance System",
+  "version": "v1.0",
+  "category": "Education",
+  "size": "21 MB",
+  "shortDesc": "Attendance system",
+  "description": "Attendance system",
+  "icon": "images/icons/KSD.png",
+  "apkFile": "apks/Attendance_System.apk",
+  "screenshots": [
+    "images/screenshots/Screenshot1.png",
+    "images/screenshots/Screenshot2.png",
+    "images/screenshots/Screenshot3.png",
+    "images/screenshots/Screenshot4.png"
+  ],
+  "downloads": 0,
+  "rating": 0,
+  "ratingCount": 0,
+  "date": "2026-05-03",
+  "versionHistory": [
+    {
+      "version": "v1.0",
+      "date": "2026-05-03",
+      "note": "Latest version 1.0"
+    }
+  ]
+}]
