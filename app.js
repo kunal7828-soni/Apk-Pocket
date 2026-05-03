@@ -59,7 +59,9 @@ async function loadApps() {
       ? `?t=${Date.now()}` : '';
     const res  = await fetch(`data/apps.json${bust}`);
     if (!res.ok) throw new Error('HTTP ' + res.status);
-    return await res.json();
+    const data = await res.json();
+    // FIX: make sure we always return an array
+    return Array.isArray(data) ? data : [];
   } catch (e) {
     console.error('Could not load apps.json:', e);
     showGridError();
