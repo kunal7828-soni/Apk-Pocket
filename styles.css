@@ -7,9 +7,9 @@
   --bdr: #2d3829;
   --t1: #e8f0e4;
   --t2: #7d9174;
-  --acc: #6dff6a;
-  --acc2: #39e03c;
-  --accDim: rgba(109, 255, 106, .10);
+  --acc: #6ac1ff;
+  --acc2: #397ce0;
+  --accDim: rgba(106, 208, 255, 0.1);
   --red: #ff5f5f;
   --yellow: #ffd060;
   --r: 12px;
@@ -230,7 +230,7 @@ body.light .navbar {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(109, 255, 106, .06) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(106, 166, 255, 0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
