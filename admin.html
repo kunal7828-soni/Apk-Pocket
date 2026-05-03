@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Admin – APKVault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Unbounded:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">▲</div>
+        <span>APK<strong>Vault</strong></span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">← Store</a>
+        <button class="theme-btn" id="themeBtn">
+          <svg id="moonIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sunIcon" class="hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container admin-pg">
+
+    <div class="admin-top">
+      <h1 class="admin-h1">⚙️ Admin Panel</h1>
+      <p class="admin-sub">Fill in the form → copy the generated JSON → paste it into <code>data/apps.json</code> on GitHub</p>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="how-box">
+      <h2>📋 How to Add a New App</h2>
+      <ol>
+        <li>Upload your APK file to the <code>apks/</code> folder in your GitHub repo</li>
+        <li>Upload the app icon to <code>images/icons/</code> folder</li>
+        <li>Optionally upload screenshots to <code>images/screenshots/</code></li>
+        <li>Fill in the form below</li>
+        <li>Click <strong>"Generate JSON Entry"</strong></li>
+        <li>Copy the generated text</li>
+        <li>Open <code>data/apps.json</code> on GitHub → Edit → Paste inside the <code>[ ]</code> array</li>
+        <li>Commit the change → Done! App appears on site in ~1 minute</li>
+      </ol>
+    </div>
+
+    <!-- FORM -->
+    <div class="admin-card">
+      <h2>Add New App</h2>
+
+      <div class="fg2">
+        <div class="fg">
+          <label>App Name *</label>
+          <input type="text" id="fName" placeholder="e.g. My Awesome App" />
+        </div>
+        <div class="fg">
+          <label>App ID * <small>(no spaces, use hyphens)</small></label>
+          <input type="text" id="fId" placeholder="e.g. my-awesome-app" />
+        </div>
+      </div>
+
+      <div class="fg2">
+        <div class="fg">
+          <label>Version *</label>
+          <input type="text" id="fVersion" placeholder="e.g. 1.0.0" />
+        </div>
+        <div class="fg">
+          <label>Category *</label>
+          <select id="fCat">
+            <option value="">Choose…</option>
+            <option>Tools</option>
+            <option>Games</option>
+            <option>Social</option>
+            <option>Entertainment</option>
+            <option>Productivity</option>
+            <option>Education</option>
+            <option>Finance</option>
+            <option>Health &amp; Fitness</option>
+            <option>Photography</option>
+            <option>Music</option>
+            <option>Shopping</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fg2">
+        <div class="fg">
+          <label>File Size</label>
+          <input type="text" id="fSize" placeholder="e.g. 24 MB" />
+        </div>
+        <div class="fg">
+          <label>Release Date</label>
+          <input type="date" id="fDate" />
+        </div>
+      </div>
+
+      <div class="fg">
+        <label>Short Description * <small>(shown on card, max 100 chars)</small></label>
+        <input type="text" id="fShort" placeholder="One-line summary of the app" maxlength="100" />
+      </div>
+
+      <div class="fg">
+        <label>Full Description *</label>
+        <textarea id="fDesc" rows="5" placeholder="Full app description, features list, what's new…"></textarea>
+      </div>
+
+      <div class="fg2">
+        <div class="fg">
+          <label>APK Filename *</label>
+          <input type="text" id="fApk" placeholder="e.g. my-app-v1.0.0.apk" />
+          <small class="hint">File must be uploaded to <code>apks/</code> folder on GitHub</small>
+        </div>
+        <div class="fg">
+          <label>Icon Filename *</label>
+          <input type="text" id="fIcon" placeholder="e.g. my-app.png" />
+          <small class="hint">File must be uploaded to <code>images/icons/</code> on GitHub</small>
+        </div>
+      </div>
+
+      <div class="fg">
+        <label>Screenshots <small>(filenames, one per line, optional)</small></label>
+        <textarea id="fSS" rows="3" placeholder="my-app-screen1.png&#10;my-app-screen2.png&#10;my-app-screen3.png"></textarea>
+        <small class="hint">Files must be in <code>images/screenshots/</code> on GitHub</small>
+      </div>
+
+      <div class="fg">
+        <label>Version Note <small>(what's new in this version)</small></label>
+        <input type="text" id="fVerNote" placeholder="e.g. Initial release / Bug fixes / New features added" />
+      </div>
+
+      <div class="admin-actions">
+        <button class="btn-gen" onclick="generateJSON()">⚡ Generate JSON Entry</button>
+        <button class="btn-clear" onclick="clearForm()">Clear</button>
+      </div>
+
+      <div id="genAlert" class="alert hidden"></div>
+    </div>
+
+    <!-- OUTPUT -->
+    <div class="output-card hidden" id="outputCard">
+      <div class="output-header">
+        <h2>✅ Generated JSON</h2>
+        <button class="btn-copy" id="copyBtn" onclick="copyJSON()">Copy</button>
+      </div>
+      <pre id="jsonOut" class="json-out"></pre>
+
+      <div class="steps-after">
+        <h3>Next steps:</h3>
+        <ol>
+          <li>Make sure your APK is at: <code id="apkPath"></code></li>
+          <li>Make sure your icon is at: <code id="iconPath"></code></li>
+          <li>Go to your GitHub repo → open <code>data/apps.json</code></li>
+          <li>Click the ✏️ pencil (Edit) button</li>
+          <li>If the file has <code>[]</code> (empty), paste inside the brackets</li>
+          <li>If it already has apps, add a comma after the last <code>}</code> then paste</li>
+          <li>Click <strong>"Commit changes"</strong> → Done!</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- CURRENT apps.json VIEWER -->
+    <div class="admin-card">
+      <div class="output-header">
+        <h2>📦 Current apps.json</h2>
+        <button class="btn-copy" onclick="loadCurrentApps()">Refresh</button>
+      </div>
+      <div id="currentApps" class="json-out" style="max-height:300px;overflow-y:auto">
+        <span style="color:var(--t2)">Click Refresh to load current data…</span>
+      </div>
+    </div>
+
+  </div><!-- /container -->
+
+  <!-- FOOTER -->
+  <footer class="footer" style="margin-top:60px">
+    <div class="container footer-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">▲</div>
+        <span>APK<strong>Vault</strong></span>
+      </a>
+      <p>No backend · No database · Just GitHub</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Auto-generate ID from name
+    document.getElementById('fName').addEventListener('input', function() {
+      const id = this.value.toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim();
+      document.getElementById('fId').value = id;
+    });
+
+    // Set today's date as default
+    document.getElementById('fDate').valueAsDate = new Date();
+
+    function generateJSON() {
+      const name    = document.getElementById('fName').value.trim();
+      const id      = document.getElementById('fId').value.trim();
+      const version = document.getElementById('fVersion').value.trim();
+      const cat     = document.getElementById('fCat').value;
+      const size    = document.getElementById('fSize').value.trim();
+      const date    = document.getElementById('fDate').value;
+      const short   = document.getElementById('fShort').value.trim();
+      const desc    = document.getElementById('fDesc').value.trim();
+      const apk     = document.getElementById('fApk').value.trim();
+      const icon    = document.getElementById('fIcon').value.trim();
+      const ssRaw   = document.getElementById('fSS').value.trim();
+      const verNote = document.getElementById('fVerNote').value.trim() || 'Initial release';
+      const alertEl = document.getElementById('genAlert');
+
+      // Validate
+      if (!name || !id || !version || !cat || !short || !desc || !apk || !icon) {
+        alertEl.textContent = '⚠️ Please fill all required fields (marked with *).';
+        alertEl.className = 'alert error';
+        alertEl.classList.remove('hidden');
+        return;
+      }
+      if (!/^[a-z0-9-]+$/.test(id)) {
+        alertEl.textContent = '⚠️ App ID must be lowercase letters, numbers, and hyphens only.';
+        alertEl.className = 'alert error';
+        alertEl.classList.remove('hidden');
+        return;
+      }
+
+      alertEl.classList.add('hidden');
+
+      // Build screenshots array
+      const screenshots = ssRaw
+        ? ssRaw.split('\n').map(s => `images/screenshots/${s.trim()}`).filter(Boolean)
+        : [];
+
+      // Build the JSON object
+      const obj = {
+        id,
+        name,
+        version,
+        category: cat,
+        size: size || 'Unknown',
+        shortDesc: short,
+        description: desc,
+        icon: `images/icons/${icon}`,
+        apkFile: `apks/${apk}`,
+        screenshots,
+        downloads: 0,
+        rating: 0,
+        ratingCount: 0,
+        date,
+        versionHistory: [
+          { version, date, note: verNote }
+        ]
+      };
+
+      const jsonStr = JSON.stringify(obj, null, 2);
+      document.getElementById('jsonOut').textContent = jsonStr;
+      document.getElementById('apkPath').textContent = `apks/${apk}`;
+      document.getElementById('iconPath').textContent = `images/icons/${icon}`;
+      document.getElementById('outputCard').classList.remove('hidden');
+      document.getElementById('outputCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function copyJSON() {
+      const text = document.getElementById('jsonOut').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+      });
+    }
+
+    function clearForm() {
+      ['fName','fId','fVersion','fSize','fShort','fDesc','fApk','fIcon','fSS','fVerNote']
+        .forEach(id => { document.getElementById(id).value = ''; });
+      document.getElementById('fCat').value = '';
+      document.getElementById('fDate').valueAsDate = new Date();
+      document.getElementById('outputCard').classList.add('hidden');
+      document.getElementById('genAlert').classList.add('hidden');
+    }
+
+    async function loadCurrentApps() {
+      const el = document.getElementById('currentApps');
+      el.textContent = 'Loading…';
+      try {
+        const r = await fetch(`data/apps.json?t=${Date.now()}`);
+        const data = await r.json();
+        el.textContent = JSON.stringify(data, null, 2);
+      } catch(e) {
+        el.textContent = 'Could not load apps.json: ' + e.message;
+      }
+    }
+  </script>
+</body>
+</html>

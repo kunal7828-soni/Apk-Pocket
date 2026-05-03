@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="APKVault – Browse and download the best Android APK files. Fast, safe, and free." />
+  <meta name="keywords" content="APK download, Android apps, free APK, APK store" />
+  <meta property="og:title" content="APKVault – Android App Store" />
+  <meta property="og:description" content="Browse and download Android APKs for free." />
+  <title>APKVault – Android App Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Unbounded:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">▲</div>
+        <span>APK<strong>Vault</strong></span>
+      </a>
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Search apps, games…" autocomplete="off" />
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="admin.html">Admin</a>
+        <button class="theme-btn" id="themeBtn" title="Toggle theme">
+          <svg id="moonIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sunIcon" class="hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner container">
+      <div class="hero-text">
+        <div class="hero-badge">🇮🇳 Free · Safe · Fast</div>
+        <h1>The Best <span class="grad">Android Apps</span><br/>All in One Place</h1>
+        <p>Browse hundreds of APKs, download directly from GitHub. No signup, no tracking, always free.</p>
+        <div class="hero-stats" id="heroStats">
+          <div class="hstat"><span id="statTotal">0</span><small>Apps</small></div>
+          <div class="hstat"><span id="statCats">0</span><small>Categories</small></div>
+          <div class="hstat"><span>Free</span><small>Forever</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit-ring r1"></div>
+        <div class="orbit-ring r2"></div>
+        <div class="orbit-ring r3"></div>
+        <div class="orbit-center">📱</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="filter-bar">
+    <div class="container filter-inner">
+      <div class="cats" id="catBar">
+        <button class="cat active" data-cat="all">All</button>
+      </div>
+      <select id="sortSel">
+        <option value="newest">Newest</option>
+        <option value="name">A–Z</option>
+        <option value="rating">Top Rated</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- APP GRID -->
+  <main class="container main-content">
+    <div class="grid-header">
+      <h2 id="gridTitle">All Apps</h2>
+      <span class="badge" id="countBadge"></span>
+    </div>
+    <div class="app-grid" id="appGrid">
+      <!-- skeleton -->
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+    </div>
+    <div class="empty hidden" id="empty">
+      <div class="empty-ico">🔍</div>
+      <h3>No apps found</h3>
+      <p>Try a different search or category.</p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">▲</div>
+        <span>APK<strong>Vault</strong></span>
+      </a>
+      <p>Hosted on GitHub Pages · Data stored in JSON · 100% Free</p>
+      <a href="admin.html" class="footer-a">Admin →</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

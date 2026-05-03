@@ -1,0 +1,24 @@
+[
+  {
+    "id": "example-app",
+    "name": "Example App",
+    "version": "1.0.0",
+    "category": "Tools",
+    "size": "12 MB",
+    "shortDesc": "This is an example app to show you how it works.",
+    "description": "This is a full description of the example app.\n\nYou can write multiple lines here.\n\nFeatures:\n- Feature one\n- Feature two\n- Feature three",
+    "icon": "images/icons/example-app.png",
+    "apkFile": "apks/example-app-v1.0.0.apk",
+    "screenshots": [
+      "images/screenshots/example-app-1.png",
+      "images/screenshots/example-app-2.png"
+    ],
+    "downloads": 0,
+    "rating": 4.5,
+    "ratingCount": 10,
+    "date": "2025-01-01",
+    "versionHistory": [
+      { "version": "1.0.0", "date": "2025-01-01", "note": "Initial release" }
+    ]
+  }
+]

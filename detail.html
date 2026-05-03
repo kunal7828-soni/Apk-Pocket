@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">App – APKVault</title>
+  <meta name="description" id="metaDesc" content="Download APK – APKVault" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Unbounded:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">▲</div>
+        <span>APK<strong>Vault</strong></span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="admin.html">Admin</a>
+        <button class="theme-btn" id="themeBtn" title="Toggle theme">
+          <svg id="moonIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sunIcon" class="hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span id="bcName">App</span>
+    </div>
+  </div>
+
+  <!-- LOADING -->
+  <div class="detail-load" id="detailLoad">
+    <div class="spinner"></div>
+    <p>Loading…</p>
+  </div>
+
+  <!-- DETAIL CONTENT -->
+  <main class="container detail-wrap hidden" id="detailWrap">
+
+    <!-- Hero row -->
+    <section class="d-hero">
+      <img class="d-icon" id="dIcon" src="" alt="" />
+      <div class="d-meta">
+        <h1 id="dName"></h1>
+        <p class="d-cat" id="dCat"></p>
+        <div class="d-stars">
+          <span class="stars-show" id="starsShow"></span>
+          <span class="rating-txt" id="ratingTxt"></span>
+        </div>
+        <div class="chips" id="chips"></div>
+        <div class="d-actions">
+          <a class="btn-dl" id="dlBtn" href="#" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download APK
+          </a>
+          <span class="dl-count" id="dlCount"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section id="ssSection" class="hidden">
+      <h2 class="sec-title">Screenshots</h2>
+      <div class="ss-scroll" id="ssScroll"></div>
+    </section>
+
+    <!-- Description -->
+    <section>
+      <h2 class="sec-title">About</h2>
+      <div class="d-desc" id="dDesc"></div>
+    </section>
+
+    <!-- Rate -->
+    <section class="rate-box" id="rateBox">
+      <h2 class="sec-title">Rate This App</h2>
+      <p class="rate-sub">Tap a star to rate</p>
+      <div class="stars-in" id="starsIn">
+        <span class="s" data-v="1">★</span>
+        <span class="s" data-v="2">★</span>
+        <span class="s" data-v="3">★</span>
+        <span class="s" data-v="4">★</span>
+        <span class="s" data-v="5">★</span>
+      </div>
+      <p class="rated-ok hidden" id="ratedOk">✅ Thanks for rating!</p>
+    </section>
+
+    <!-- Version History -->
+    <section>
+      <h2 class="sec-title">Version History</h2>
+      <div class="ver-list" id="verList"></div>
+    </section>
+
+  </main>
+
+  <!-- NOT FOUND -->
+  <div class="container detail-wrap hidden" id="notFound" style="text-align:center;padding:80px 20px">
+    <div style="font-size:4rem">😕</div>
+    <h2>App not found</h2>
+    <p style="color:var(--t2);margin:12px 0 24px">This app doesn't exist or was removed.</p>
+    <a href="index.html" class="btn-dl" style="display:inline-flex">← Back to Store</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">▲</div>
+        <span>APK<strong>Vault</strong></span>
+      </a>
+      <p>Hosted on GitHub Pages · 100% Free</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
