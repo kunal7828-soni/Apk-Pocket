@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Admin Login – APKPocket</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Unbounded:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Auth page specific styles ── */
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: var(--bg);
+    }
+
+    .auth-card {
+      background: var(--surf);
+      border: 1px solid var(--bdr);
+      border-radius: 20px;
+      padding: 44px 40px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    }
+
+    .auth-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--fontD);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    .auth-logo strong { color: var(--acc); }
+    .auth-logo .logo-mark {
+      width: 32px; height: 32px;
+      background: var(--acc); color: #000;
+      border-radius: 8px;
+      display: grid; place-items: center;
+      font-size: 1rem;
+    }
+
+    .auth-title {
+      font-family: var(--fontD);
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .auth-sub {
+      text-align: center;
+      color: var(--t2);
+      font-size: .88rem;
+      margin-bottom: 28px;
+    }
+
+    /* Input groups */
+    .auth-fg {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .auth-fg label {
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--t2);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .auth-input-wrap {
+      position: relative;
+    }
+    .auth-fg input {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg3);
+      border: 1px solid var(--bdr);
+      border-radius: 10px;
+      color: var(--t1);
+      font-size: .95rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      font-family: var(--font);
+    }
+    .auth-fg input:focus {
+      border-color: var(--acc);
+      box-shadow: 0 0 0 3px rgba(109,255,106,.12);
+    }
+    .auth-fg input::placeholder { color: var(--t2); }
+
+    /* Show/hide password toggle */
+    .toggle-pw {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--t2);
+      cursor: pointer;
+      font-size: .85rem;
+      padding: 0;
+      transition: color .2s;
+    }
+    .toggle-pw:hover { color: var(--acc); }
+
+    /* Login button */
+    .btn-login {
+      width: 100%;
+      padding: 13px;
+      background: var(--acc);
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 1rem;
+      font-family: var(--font);
+      cursor: pointer;
+      margin-top: 8px;
+      transition: opacity .2s, transform .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-login:hover { opacity: .85; transform: translateY(-1px); }
+    .btn-login:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
+    /* Error alert */
+    .auth-error {
+      background: rgba(255,95,95,.1);
+      border: 1px solid rgba(255,95,95,.35);
+      color: #ff5f5f;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-size: .87rem;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    /* Back link */
+    .auth-back {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: .85rem;
+      color: var(--t2);
+      transition: color .2s;
+    }
+    .auth-back:hover { color: var(--acc); }
+
+    /* Lock icon at top */
+    .auth-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--accDim);
+      border: 1px solid rgba(109,255,106,.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin: 0 auto 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-page">
+    <div class="auth-card">
+
+      <!-- Logo -->
+      <a href="index.html" class="auth-logo">
+        <div class="logo-mark">▲</div>
+        <span>APK<strong>Pocket</strong></span>
+      </a>
+
+      <!-- Lock icon -->
+      <div class="auth-icon">🔐</div>
+
+      <h1 class="auth-title">Admin Login</h1>
+      <p class="auth-sub">Enter your credentials to access the panel</p>
+
+      <!-- Error message (hidden by default) -->
+      <div class="auth-error hidden" id="authError"></div>
+
+      <!-- Email -->
+      <div class="auth-fg">
+        <label>Email</label>
+        <div class="auth-input-wrap">
+          <input
+            type="email"
+            id="authEmail"
+            placeholder="admin@example.com"
+            autocomplete="email"
+          />
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="auth-fg">
+        <label>Password</label>
+        <div class="auth-input-wrap">
+          <input
+            type="password"
+            id="authPassword"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
+          <button class="toggle-pw" onclick="togglePassword()" type="button" id="toggleBtn">
+            Show
+          </button>
+        </div>
+      </div>
+
+      <!-- Login Button -->
+      <button class="btn-login" id="loginBtn" onclick="handleLogin()">
+        🔓 Sign In
+      </button>
+
+      <!-- Back to store -->
+      <a href="index.html" class="auth-back">← Back to Store</a>
+
+    </div>
+  </div>
+
+  <script>
+    /* ── Config — change these to your credentials ── */
+    const ADMIN_EMAIL    = 'admin@apkpocket.com';  // ← Change this
+    const ADMIN_PASSWORD = 'Admin@123';            // ← Change this
+
+    /* ── Check if already logged in ── */
+    if (sessionStorage.getItem('apk_admin_auth') === 'true') {
+      window.location.href = 'admin.html';
+    }
+
+    /* ── Allow Enter key to submit ── */
+    document.getElementById('authPassword').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleLogin();
+    });
+    document.getElementById('authEmail').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleLogin();
+    });
+
+    /* ── Login logic ── */
+    function handleLogin() {
+      const email    = document.getElementById('authEmail').value.trim();
+      const password = document.getElementById('authPassword').value;
+      const errorEl  = document.getElementById('authError');
+      const btn      = document.getElementById('loginBtn');
+
+      // Basic validation
+      if (!email || !password) {
+        showError('Please enter both email and password.');
+        return;
+      }
+
+      // Disable button and show loading
+      btn.disabled    = true;
+      btn.textContent = '⏳ Signing in…';
+      errorEl.classList.add('hidden');
+
+      // Simulate slight delay for UX (feels more real)
+      setTimeout(() => {
+        if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+          
+          sessionStorage.setItem('apk_admin_auth', 'true');
+          window.location.href = 'admin.html';
+        } else {
+          showError('Incorrect email or password. Please try again.');
+          btn.disabled    = false;
+          btn.innerHTML   = '🔓 Sign In';
+          document.getElementById('authPassword').value = '';
+          document.getElementById('authPassword').focus();
+        }
+      }, 600);
+    }
+
+    /* ── Show/hide password ── */
+    function togglePassword() {
+      const input = document.getElementById('authPassword');
+      const btn   = document.getElementById('toggleBtn');
+      if (input.type === 'password') {
+        input.type   = 'text';
+        btn.textContent = 'Hide';
+      } else {
+        input.type   = 'password';
+        btn.textContent = 'Show';
+      }
+    }
+
+    /* ── Show error message ── */
+    function showError(msg) {
+      const el = document.getElementById('authError');
+      el.textContent = msg;
+      el.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
