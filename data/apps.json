@@ -2,9 +2,9 @@
   {
   "id": "attendance-system",
   "name": "Attendance System",
-  "version": "v1.0",
+  "version": "2.0",
   "category": "Education",
-  "size": "21 MB",
+  "size": "46 MB",
   "shortDesc": "Attendance system",
   "description": "Attendance system",
   "icon": "images/icons/APK_Pocket_Attandance_Logo.png",
@@ -21,9 +21,9 @@
   "date": "2026-05-03",
   "versionHistory": [
     {
-      "version": "v1.0",
+      "version": "2.0",
       "date": "2026-05-03",
-      "note": "Latest version 1.0"
+      "note": "Latest version 2.0"
     }
   ]
 }
