@@ -387,3 +387,18 @@ function esc(s) {
 function enc(s) {
   return encodeURIComponent(String(s ?? ''));
 }
+
+function login() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const adminEmail = "admin@example.com";
+            const adminPassword = "123456";
+
+            if(email === adminEmail && password === adminPassword) {
+                localStorage.setItem("isAdmin", "true");
+                window.location.href = "Admin.html";
+            } else {
+                alert("Invalid Email or Password");
+            }
+        }
