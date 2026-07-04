@@ -28,3 +28,35 @@
   ]
 }
 ]
+[
+  {
+  "id": "do-anything",
+  "name": "Do Anything",
+  "version": "1.0.0",
+  "category": "Other",
+  "size": "23.04 MB",
+  "shortDesc": "Simple daily tasks, goals & reminders",
+  "description": "Stay on top of every task, habit, and goal — all in one place.\nThis all-in-one productivity app helps you organize your day, build lasting habits, plan ahead, and track long-term progress — without the clutter.\n📅 Today\nAdd tasks for the day and check them off as you go. When you complete a task, jot down a quick note on what you actually did. Tasks automatically fade and clear out after midnight, keeping your list fresh every morning — and if you didn't finish something, you can recover it back into today's list with one tap.\n🔁 Daily\nBuild habits that matter. Daily tasks reset automatically every day, so you can track routines like exercise, reading, or meditation without recreating them each morning. Mark today's win with a note, and watch your streak continue tomorrow.\n🗓️ Planned\nPlan ahead with a calendar view. Pick any date, add a task, and get an optional reminder notification — so nothing important slips through the cracks, whether it's tomorrow or three months from now.\n🎯 Goal\nBreak big goals into subjects and track your progress over time. Check off a subject when you make progress, add a remark on what you accomplished, and see a full sorted history of every entry — perfect for tracking learning goals, projects, or personal development.\n⏰ Reminders, your way\nEvery task and habit supports optional alarm/notification reminders — you choose exactly when to be reminded, and only for the tasks that need it.\n✅ Built for real life\n\nAll your data is saved locally and stays with you — no account, no sign-up required\nFull control: edit or delete any task, habit, goal, or entry at any time\nClean, distraction-free design so you can focus on doing, not managing your to-do app\n\nWhether you're organizing today's errands, building a new habit, planning next month, or working toward a big personal goal — this app keeps it all simple, visual, and satisfying to check off.",
+  "icon": "images/icons/do-anything-icon.jpg",
+  "apkFile": "apks/do-anything-v1.0.0.apk",
+  "screenshots": [
+    "images/screenshots/do-anything-1.png",
+    "images/screenshots/do-anything-2.png",
+    "images/screenshots/do-anything-3.png",
+    "images/screenshots/do-anything-4.png",
+    "images/screenshots/do-anything-5.png",
+    "images/screenshots/do-anything-6.png"
+  ],
+  "downloads": 0,
+  "rating": 0,
+  "ratingCount": 0,
+  "date": "2026-07-04",
+  "versionHistory": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-04",
+      "note": "Initial release"
+    }
+  ]
+}
+]
