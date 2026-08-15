@@ -56,33 +56,5 @@
       "note": "Initial release"
     }
   ]
-},
-  {
-  "id": "student-marked",
-  "name": "Student Marked",
-  "version": "1.0.0",
-  "category": "Education",
-  "size": "50 MB",
-  "shortDesc": "Simple and efficient student attendance management with quick marking, reports, and student manage",
-  "description": "## Attendance Management App\n\nA simple, fast, and user-friendly attendance management application designed to make daily student attendance marking easier and more organized.\n\n### Key Features\n\n* **Quick Attendance Marking** – Mark students as Present, Absent, or POD with a simple tap.\n* **Student Management** – Add, edit, and manage students from the master student list.\n* **Lecture-wise Attendance** – Maintain attendance separately for different lectures.\n* **TG Attendance** – Dedicated support for TG (Teacher Guardian) attendance.\n* **Date-wise Records** – Select a date and manage attendance for that specific day.\n* **Attendance Summary** – View Present, POD, Absent, and Total student counts instantly.\n* **Attendance Reports** – Generate a clear attendance report after completing attendance.\n* **Copy & Share** – Copy Present/POD or Absent student data and directly open the system share option.\n* **Delete Students** – Select and remove students when required.\n* **Local Data Storage** – Attendance and student information can be maintained within the application for convenient access.\n\n### Easy to Use\n\nThe application is designed with a clean interface and a simple workflow so attendance can be completed quickly without unnecessary steps. Student information and attendance records are organized to make everyday classroom attendance management convenient.\n\n**Built for students, class representatives, teachers, and academic attendance management.**",
-  "icon": "images/icons/student-marked.png",
-  "apkFile": "apks/Student-Marked.apk",
-  "screenshots": [
-    "images/screenshots/student-marked-3.png",
-    "images/screenshots/student-marked-1.png",
-    "images/screenshots/student-marked-2.png",
-    "images/screenshots/student-marked-4.png"
-  ],
-  "downloads": 0,
-  "rating": 0,
-  "ratingCount": 0,
-  "date": "2026-08-15",
-  "versionHistory": [
-    {
-      "version": "1.0.0",
-      "date": "2026-08-15",
-      "note": "V.1.0.0"
-    }
-  ]
 }
 ]
